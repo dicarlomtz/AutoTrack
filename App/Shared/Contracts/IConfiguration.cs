@@ -1,4 +1,5 @@
-namespace AutoTrack.App.Configuration;
+namespace AutoTrack.App.Shared.Contracts;
+
 
 public interface IConfiguration<T>
 {

@@ -3,6 +3,7 @@ using AutoTrack.App.Configuration.Startup.Services;
 
 namespace AutoTrack.App.Configuration.Startup;
 
+
 public class Startup
 {
     public IConfiguration Configuration { get; }
@@ -29,6 +30,13 @@ public class Startup
 
     private void ConfigureEnvironment(IApplicationBuilder app, IWebHostEnvironment env)
     {
+        if (env.IsLocal())
+        {
+            LocalConfiguration localConfiguration = new LocalConfiguration();
+            localConfiguration.Configure(app);
+            return;
+        }
+
         if (env.IsDevelopment())
         {
             DevelopmentConfiguration developmentConfiguration = new DevelopmentConfiguration();

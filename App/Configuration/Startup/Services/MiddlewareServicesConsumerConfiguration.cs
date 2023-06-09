@@ -1,4 +1,7 @@
+using AutoTrack.App.Shared.Contracts;
+
 namespace AutoTrack.App.Configuration.Startup.Services;
+
 
 public class MiddlewareServicesConsumerConfiguration : IConfiguration<IApplicationBuilder>
 {
