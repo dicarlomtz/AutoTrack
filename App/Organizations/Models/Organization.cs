@@ -1,10 +1,12 @@
 using System.ComponentModel.DataAnnotations;
-
 using AutoTrack.App.Workshops.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutoTrack.App.Organizations.Models;
 
 
+[Index(nameof(Name))]
+[Index(nameof(Subdomain))]
 public class Organization
 {
     public long Id { get; set; }

@@ -1,15 +1,15 @@
 using Microsoft.EntityFrameworkCore;
-
-using AutoTrack.App.VehicleProcessSteps.Models;
-using AutoTrack.App.VehileProcesses.Models;
-using AutoTrack.App.Organizations.Models;
-using AutoTrack.App.Workshops.Models;
-using AutoTrack.App.Processes.Models;
-using AutoTrack.App.Vehicles.Models;
 using AutoTrack.App.Statuses.Models;
 using AutoTrack.App.Notes.Models;
-using AutoTrack.App.Steps.Models;
 using AutoTrack.App.Database.Environment;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using AutoTrack.App.Organizations.Models;
+using AutoTrack.App.Workshops.Models;
+using AutoTrack.App.Steps.Models;
+using AutoTrack.App.VehileProcesses.Models;
+using AutoTrack.App.VehicleProcessSteps.Models;
+using AutoTrack.App.Vehicles.Models;
+using AutoTrack.App.Processes.Models;
 
 namespace AutoTrack.App.Database;
 
@@ -32,6 +32,11 @@ public class AutoTrackDbContext : DbContext
         : base(options)
     {
         _hostEnvironment = hostEnvironment;
+    }
+
+    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+        configurationBuilder.Conventions.Remove(typeof(ForeignKeyIndexConvention));
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
