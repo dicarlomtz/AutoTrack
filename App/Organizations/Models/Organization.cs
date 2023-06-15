@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using AutoTrack.App.Workshops.Models;
 using Microsoft.EntityFrameworkCore;
+
+using AutoTrack.App.Workshops.Models;
 
 namespace AutoTrack.App.Organizations.Models;
 

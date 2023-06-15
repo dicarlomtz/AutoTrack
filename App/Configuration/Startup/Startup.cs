@@ -7,58 +7,50 @@ namespace AutoTrack.App.Configuration.Startup;
 public class Startup
 {
     public IConfiguration Configuration { get; }
-    private ServicesConfiguration _servicesConfiguration { get; set; }
-    private MiddlewareServicesConsumerConfiguration _middlewareServicesConsumerConfiguration { get; set; }
 
     public Startup(IConfiguration configuration)
     {
         Configuration = configuration;
-        _servicesConfiguration = new ServicesConfiguration();
-        _middlewareServicesConsumerConfiguration = new MiddlewareServicesConsumerConfiguration();
     }
 
     public void ConfigureServices(IServiceCollection services)
     {
-        _servicesConfiguration.Configure(services);
+        services.AddServicesConfiguration();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         ConfigureEnvironment(app, env);
-        _middlewareServicesConsumerConfiguration.Configure(app);
+        app.UseServices();
     }
 
     private void ConfigureEnvironment(IApplicationBuilder app, IWebHostEnvironment env)
     {
         if (env.IsLocal())
         {
-            LocalConfiguration localConfiguration = new LocalConfiguration();
-            localConfiguration.Configure(app);
+            app.ConfigureLocal();
             return;
         }
 
         if (env.IsDevelopment())
         {
-            DevelopmentConfiguration developmentConfiguration = new DevelopmentConfiguration();
-            developmentConfiguration.Configure(app);
+            app.ConfigureDevelopment();
             return;
         }
 
         if (env.IsStaging())
         {
-            StagingConfiguration stagingConfiguration = new StagingConfiguration();
-            stagingConfiguration.Configure(app);
+            app.ConfigureProduction();
             return;
         }
 
         if (env.IsTesting())
         {
-            TestingConfiguration testingConfiguration = new TestingConfiguration();
-            testingConfiguration.Configure(app);
+            app.ConfigureTesting();
             return;
         }
 
-        ProductionConfiguration productionConfiguration = new ProductionConfiguration();
-        productionConfiguration.Configure(app);
+        app.ConfigureProduction();
+        return;
     }
 }

@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using AutoTrack.App.Statuses.Configurations;
 using Microsoft.EntityFrameworkCore;
+
+using AutoTrack.App.Statuses.Configurations;
 
 namespace AutoTrack.App.Statuses.Models;
 

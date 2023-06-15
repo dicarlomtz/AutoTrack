@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 
+using AutoTrack.App.ProcessSteps.Models;
 using AutoTrack.App.Processes.Models;
 using AutoTrack.App.Workshops.Models;
-using AutoTrack.App.ProcessSteps.Models;
 
 namespace AutoTrack.App.Processes.Configurations;
 

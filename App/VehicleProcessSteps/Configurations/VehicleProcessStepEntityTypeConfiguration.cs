@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+
 using AutoTrack.App.VehicleProcessSteps.Models;
 
 namespace AutoTrack.App.VehicleProcessSteps.Configurations;

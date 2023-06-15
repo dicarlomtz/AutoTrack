@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using AutoTrack.App.Processes.Models;
-using AutoTrack.App.Steps.Configurations;
 using Microsoft.EntityFrameworkCore;
+
+using AutoTrack.App.Steps.Configurations;
+using AutoTrack.App.Processes.Models;
 
 namespace AutoTrack.App.Steps.Models;
 

@@ -1,11 +1,9 @@
-using AutoTrack.App.Shared.Contracts;
-
 namespace AutoTrack.App.Configuration.Startup.Environment;
 
 
-public class LocalConfiguration : IConfiguration<IApplicationBuilder>
+public static class LocalConfiguration
 {
-    public void Configure(IApplicationBuilder app)
+    public static void ConfigureLocal(this IApplicationBuilder app)
     {
         app.UseSwagger();
         app.UseSwaggerUI();

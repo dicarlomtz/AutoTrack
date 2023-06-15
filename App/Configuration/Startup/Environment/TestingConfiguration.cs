@@ -1,11 +1,9 @@
-using AutoTrack.App.Shared.Contracts;
-
 namespace AutoTrack.App.Configuration.Startup.Environment;
 
 
-public class TestingConfiguration : IConfiguration<IApplicationBuilder>
+public static class TestingConfiguration
 {
-    public void Configure(IApplicationBuilder app)
+    public static void ConfigureTesting(this IApplicationBuilder app)
     {
         throw new NotImplementedException();
     }

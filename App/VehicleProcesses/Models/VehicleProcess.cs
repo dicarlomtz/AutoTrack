@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 using AutoTrack.App.VehicleProcesses.Configurations;
 using AutoTrack.App.VehicleProcessSteps.Models;
+using AutoTrack.App.Processes.Models;
 using AutoTrack.App.Vehicles.Models;
 using AutoTrack.App.Statuses.Models;
 using AutoTrack.App.Notes.Models;
-using AutoTrack.App.Processes.Models;
 
 namespace AutoTrack.App.VehileProcesses.Models;
 

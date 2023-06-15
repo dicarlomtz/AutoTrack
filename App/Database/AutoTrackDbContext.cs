@@ -48,33 +48,29 @@ public class AutoTrackDbContext : DbContext
     {
         if (_hostEnvironment.IsLocal())
         {
-            LocalDbConfiguration localDbConfiguration = new LocalDbConfiguration();
-            localDbConfiguration.Configure(optionsBuilder);
+            optionsBuilder.ConfigureLocalDb();
             return;
         }
 
         if (_hostEnvironment.IsDevelopment())
         {
-            DevelopmentDbConfiguration developmentDbConfiguration = new DevelopmentDbConfiguration();
-            developmentDbConfiguration.Configure(optionsBuilder);
+            optionsBuilder.ConfigureDevelopmentDb();
             return;
         }
 
         if (_hostEnvironment.IsStaging())
         {
-            StagingDbConfiguration stagingDbConfiguration = new StagingDbConfiguration();
-            stagingDbConfiguration.Configure(optionsBuilder);
+            optionsBuilder.ConfigureStagingDb();
             return;
         }
 
         if (_hostEnvironment.IsTesting())
         {
-            TestingDbConfiguration testingDbConfiguration = new TestingDbConfiguration();
-            testingDbConfiguration.Configure(optionsBuilder);
+            optionsBuilder.ConfigureStagingDb();
             return;
         }
 
-        ProductionDbConfiguration productionDbConfiguration = new ProductionDbConfiguration();
-        productionDbConfiguration.Configure(optionsBuilder);
+        optionsBuilder.ConfigureProductionDb();
+        return;
     }
 }

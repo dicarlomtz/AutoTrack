@@ -1,13 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 
-using AutoTrack.App.Shared.Contracts;
-
 namespace AutoTrack.App.Database.Environment;
 
 
-public class TestingDbConfiguration : IConfiguration<DbContextOptionsBuilder>
+public static class TestingDbConfiguration
 {
-    public void Configure(DbContextOptionsBuilder optionsBuilder)
+    public static void ConfigureTestingDb(this DbContextOptionsBuilder optionsBuilder)
     {
         throw new NotImplementedException();
     }

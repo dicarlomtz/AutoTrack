@@ -1,11 +1,9 @@
-using AutoTrack.App.Shared.Contracts;
-
 namespace AutoTrack.App.Configuration.Startup.Services;
 
 
-public class MiddlewareServicesConsumerConfiguration : IConfiguration<IApplicationBuilder>
+public static class ServicesConsumer
 {
-    public void Configure(IApplicationBuilder app)
+    public static void UseServices(this IApplicationBuilder app)
     {
         app.UseHttpsRedirection();
         app.UseAuthorization();

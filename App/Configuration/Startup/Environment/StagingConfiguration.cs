@@ -1,10 +1,9 @@
-using AutoTrack.App.Shared.Contracts;
 namespace AutoTrack.App.Configuration.Startup.Environment;
 
 
-public class StagingConfiguration : IConfiguration<IApplicationBuilder>
+public static class StagingConfiguration
 {
-    public void Configure(IApplicationBuilder app)
+    public static void ConfigureStaging(this IApplicationBuilder app)
     {
         throw new NotImplementedException();
     }

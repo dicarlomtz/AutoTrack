@@ -1,11 +1,9 @@
-using AutoTrack.App.Shared.Contracts;
-
 namespace AutoTrack.App.Configuration.Startup.Environment;
 
 
-public class ProductionConfiguration : IConfiguration<IApplicationBuilder>
+public static class ProductionConfiguration
 {
-    public void Configure(IApplicationBuilder app)
+    public static void ConfigureProduction(this IApplicationBuilder app)
     {
         throw new NotImplementedException();
     }

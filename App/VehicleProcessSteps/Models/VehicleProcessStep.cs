@@ -1,9 +1,10 @@
-using AutoTrack.App.Statuses.Models;
-using AutoTrack.App.Notes.Models;
-using AutoTrack.App.Steps.Models;
-using Microsoft.EntityFrameworkCore;
-using AutoTrack.App.VehicleProcessSteps.Configurations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
+
+using AutoTrack.App.VehicleProcessSteps.Configurations;
+using AutoTrack.App.Statuses.Models;
+using AutoTrack.App.Steps.Models;
+using AutoTrack.App.Notes.Models;
 
 namespace AutoTrack.App.VehicleProcessSteps.Models;
 
